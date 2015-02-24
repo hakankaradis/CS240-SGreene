@@ -1,0 +1,21 @@
+You may not use the STL in this lab. You also may not use any C/C++ built-in functions, classes or templates (such as string functions, the string class, vector, list, etc...), except those which were specifically discussed in lecture. If you are not sure if you can use a particular component or not, send a detailed e-mail to the instructor asking about it.
+
+Part A
+
+Create a new directory and copy the code for the LongList class and test.cpp into this directory. Rename this class and its files to LongDList, and rename the test.cpp file to main.cpp. Remove all the tests and other uses of, and references to, the LongArray class from this main file. Create a Makefile which will build only this main program with only this one class.
+
+This is a point where you should test this completely, and save this working version once it is complete. However, you should be able to do this on your own now, and you don't need to demonstrate this to the TA.
+
+Part B
+
+Expand the LongDList class so it actually implements a doubly-linked list with a tail pointer. Be sure all your existing methods now correctly handle all possible cases for this new structure.
+
+Add Append() and Shrink() member functions as well, as an overloaded bracket operator, which work like the LongArray's did in the previous lab (but for this doubly-linked list instead). Add the ability for the user to test these features to your main function as well.
+
+Once this is all working, copy this version into a new folder, and be ready to show this version to the TA in lab when asked. When the TA does verify this, you will also need to explain to the TA what you changed and how all these new and changed parts of your program work. This will be part of your grade for this project.
+
+Part C
+
+Go though all your code and be sure it is well organized, well commented, neat and easily readable. This will be a big part of your overall grade for this project.
+
+
