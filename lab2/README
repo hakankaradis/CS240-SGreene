@@ -1,0 +1,61 @@
+In this lab, you begin designing and writing your own C++ code, and will write your first Makefile.
+
+This is an individual assignment - you may NOT work in groups. Do not write or dictate code for anyone else, and do not use code from anyone else. If you break this rule, you may fail the entire class.
+
+You may not use string functions (such as strlen) or the C++ "string" class for this lab. You must deal with strings as arrays only, except for outputting them with cout.
+
+Part A
+
+Create a new directory and create three code files in it called "main.cpp", "tenstrings.cpp" and "tenstrings.h". Then "#include" the header file in both of the CPP files and protect the header file with #ifndef/#define/#endif, as discussed in lecture.
+
+In the header file ("tenstrings.h"), add the definition of a class called "TenStrings", which contains only a default (no-argument) constructor.
+
+Add the (empty) implementation of that default constructor to the tenstrings.cpp code file.
+
+Add a basic main() function to main.cpp which creates a variable of type "TenStrings", then just returns 0.
+
+Finally, create a Makefile that will build these two cpp files into object files and then link those into an executable (each as separate steps) called "lab2".
+
+Make sure your Makefile always uses the -Wall option to each run of gcc, and be sure it has an "all" rule. Also, be sure your name is at the top of your Makefile in a comment (comments in Makefiles are lines that begin with a the '#' symbol). Be sure to test your Makefile.
+
+Wait for the TA to verify that your Makefile functions properly, and your final created program runs correctly. Explain to the TA how your Makefile works and what each part of it does. This will be part of your grade for this project. This must be completed in this week's (2010/09/16) lab section.
+
+Part B
+
+Implement this TenStrings class such that it acts as an array of 10 constant-data strings. Start with the basic [] operator, and the constructor.
+
+In the constructor, the 10 strings should initially be set to "First String", "Second String", etc....
+
+In the [] operator, the index should be checked to confirm it is between 0 and 9. If it is not, the string "Undefined" should be returned instead.
+
+Add code to your main function in main.cpp to test each of these requirements as you implement them (outputting these tests using "cout"). Leave all of these tests in this program to show the TA once you have completed this part.
+
+Wait for the TA to verify that your program performs correctly. Explain to the TA how your program works, and explain the output it generates. This will be part of your grade for this project. This can be done in either this or next week's lab section.
+
+Part C
+
+Add the following capabilities to your TenStrings class, making it a more complete ADT:
+
+Allow the class user to set the 10 strings using regular assignment, such as: 
+  TenStrings ten;
+  ten[7] = "Ninja";
+Prevent strings which are longer than 75 characters, or contain characters other than letters spaces and hyphens, from being used. 
+
+To do this, check strings as they are requested by the [] operator (not as they are set). If they don't fit the requirements, return "Undefined" instead. 
+
+For example, this code should output "Undefined":
+  TenStrings ten;
+  ten[4] = "Hawaii 5-O";
+  cout << ten[4] << endl;
+But, this code should output "Hawaii Five-O":
+  TenStrings ten;
+  ten[4] = "Hawaii Five-O";
+  cout << ten[4] << endl;
+Be sure to test the case of assigning to an invalid string: 
+
+For example, this code should output "Hello":
+  TenStrings ten;
+  ten[3] = "3.151492";
+  ten[3] = "Hello";
+  cout << ten[3] << endl;
+

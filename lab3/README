@@ -1,0 +1,76 @@
+You may not use the STL in this lab. You also may not use any C/C++ built-in functions, classes or templates (such as string functions, the string class, vector, list, etc...), except those which were specifically discussed in lecture. If you are not sure if you can use a particular component or not, send a detailed e-mail to the instructor asking about it.
+
+Part A
+
+Create a new directory and create appropriate C++ code and header files in it to implement a main function and two ADTs, one called "LongList" and one called "LongArray". Be sure each ADT has an implementation (.cpp) file and a header (.h) file and the main function is in a separate "show.cpp" file, which "#include"s both ADT header files. Also be sure to protect both of the ADTs' header files with #ifndef/#define/#endif, as discussed in lecture.
+
+In each ADT's header file, define the appropriate class, but leave the class definition empty for now except a default constructor. In each implementation file, create an empty implementation of this constructor.
+
+In the main function in "show.cpp", for now just create one variable of each ADT, and then just "return 0".
+
+Create a Makefile that will build these three cpp files into object files and then link those into an executable (each as separate steps) called "show".
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked. When the TA does verify that your Makefile for this part functions properly, and your final created program runs correctly, you will also need to explain to the TA how your Makefile works and what each part of it does. This will be part of your grade for this project. This must be completed in this week's (2010/09/30) lab section.
+
+Part B
+
+Add a second main function in a new file called "test.cpp" (you can just copy show.cpp for now).
+
+Add to your Makefile such that this file will also be compiled with the two ADTs into a program called "test". So, your makefile will now, by default, create two programs ("show" and "test").
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked. When the TA does verify that your Makefile for this part functions properly, and both final created programs run correctly, you will also need to explain to the TA how your Makefile was changed, and what each new part of it does. This will be part of your grade for this project. This must be completed in this week's (2010/09/30) lab section.
+
+Part C
+
+The LongArray class should be an ADT which implements a dynamic array of the "long" type:
+
+Add to its header and implementation files the code necessary for an "Append()" member function which just adds a value to the end of the array (enlarging the allocation when required).
+Add the code required for outputting the entire array using the ostream C++ standard. This output should be formatted as one number per line, with no punctuation or other characters.
+Add code to your "show.cpp" main function which tests these features several times with several different cases and sizes.
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked, and explain how it all works. This must be completed in this week's (2010/09/30) lab section.
+
+Part D
+
+Add to this LongArray ADT the code necessary for a "Shrink()" member function which just removes, and returns the value of, the last value of the array. This function should never resize the array allocation.
+
+Add code to your "show.cpp" main function which tests this feature several times with several different cases and sizes.
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked, and explain how it all works. This must be completed in this week's (2010/09/30) lab section.
+
+Part E
+
+Add a working, protected, bracket operator to this LongArray ADT. Be sure it allows changing of the elements as well as viewing them. This operator should never resize the array allocation. It should return a zero if an access is attempted below zero or beyond the last element.
+
+Add code to your "show.cpp" main function which tests this operator several times with several different cases and sizes.
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked, and explain how it all works. This must be completed in this week's (2010/09/30) lab section.
+
+Part F
+
+The LongList class should be an ADT which implements a linked list of the "long" type:
+
+Add to its header and implementation files the code necessary for a "Prepend()" member function which just adds a value to the beginning of the list.
+Add the code required for outputting the entire list using the ostream C++ standard. This output should be formatted as one number per line, with no punctuation or other characters.
+Add code to your "show.cpp" main function which tests these features several times with several different cases and sizes.
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked, and explain how it all works. This must be completed in this week's (2010/09/30) lab section.
+
+Part G
+
+Add to this LongList ADT the code necessary for a "Trim()" member function which just removes, and returns the value of, the first value of the list.
+
+Add code to your "show.cpp" main function which tests this feature several times with several different cases and sizes.
+
+Once this is all working, copy this version (without any additions from later parts) into a new folder, and be ready to show this version to the TA when asked, and explain how it all works. This must be completed in this week's (2010/09/30) lab section.
+
+Part H
+
+Implement the other main function, in test.cpp, which allows the user of the program to test the features of the class interactively.
+
+The easiest way to do this is with a simple menu system. Just display the options, with numbers, to the screen using cout, input a number from the user, test that option, and return back to the menu:
+
+One of the options should allow the user to exit the program.
+Operations which add values to the list or array should allow the user to type their own values to be added.
+Operations which remove values from the list or array should clearly display the value that was removed from the list.
+All operations which change the list or array should print the entire list or array after they are done.
